@@ -1,0 +1,7 @@
+acc_no|type|start_data|banker_id|state|reln
+1001|trading|20-09-2015|B001|Active|1
+1002|trading|20-09-2016|B001|Active|1
+1003|trading|22-11-2017|B001|Active|2
+1004|trading|25-05-2015|B001|Active|3
+1005|trading|30-04-2020|B001|Active|4
+1006|trading|01-10-2018|B001|Active|5

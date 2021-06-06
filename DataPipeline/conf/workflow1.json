@@ -1,0 +1,88 @@
+{
+	"workflow_id": "workflow1",
+	"workflow_name": "workflow1",
+	"input": [
+		{
+			"entity_name": "client",
+			"sequence_id": 1,
+			"input_type": "HDFS-FILE",
+			"file_format": "CSV",
+			"file_delimiter": "|",
+			"file_path": "/Users/nitesh/Work/Git/SparkProjects/ETLDemo/data/client.txt",
+			"file_schema": "client_id, name, age, country, region, joining_date, reln_id"
+		},
+		{
+			"entity_name": "account",
+			"sequence_id": 2,
+			"input_type": "HDFS-FILE",
+			"file_format": "CSV",
+			"file_delimiter": "|",
+			"file_path": "/Users/nitesh/Work/Git/SparkProjects/ETLDemo/data/account.txt",
+			"file_schema": "acc_no, type, start_data, banker_id, state, reln"
+		}
+	],
+	"join_transformation": [
+		{
+			"entity_name": "client_account_joined",
+			"sequence_id": 4,
+			"trans_type": "join",
+			"entities": [
+				"client",
+				"account"
+			],
+			"join_col": [
+				"reln_id",
+				"reln"
+			]
+		}
+	],
+	"select_transformation": [
+		{
+			"entity_name": "client_account_selected",
+			"sequence_id": 5,
+			"input_entity": "client_account_joined",
+			"trans_type": "select",
+			"columns": [
+				"client_id",
+				"name",
+				"country",
+				"region",
+				"RELN",
+				"acc_no",
+				"type",
+				"start_data",
+				"banker_id",
+				"reln"
+			]
+		}
+	],
+	"filter_transformation": [
+		{
+			"entity_name": "client_account_filtered",
+			"sequence_id": 6,
+			"input_entity": "client_account_selected",
+			"trans_type": "filter",
+			"expr": "country=='Pakistan'"
+		}
+	],
+	"output": [
+		{
+			"entity_name": "client_account",
+			"sequence_id": 7,
+			"input_type": "client_account_joined",
+			"file_format": "CSV",
+			"file_delimiter": "|",
+			"file_path": "/Users/nitesh/Work/Git/SparkProjects/ETLDemo/output",
+			"file_schema": ""
+		},
+		{
+			"entity_name": "account_output",
+			"sequence_id": 3,
+			"input_type": "account",
+			"file_format": "CSV",
+			"file_delimiter": "^",
+			"file_path": "/Users/nitesh/Work/Git/SparkProjects/ETLDemo/output",
+			"file_schema": ""
+		}
+	]
+}

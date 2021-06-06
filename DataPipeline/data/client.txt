@@ -1,0 +1,8 @@
+id0001|Nitesh|26|india|ASIA|31-10-2015|1
+id0002|Gayatri|29|india|ASIA|31-10-2016|1
+id0003|Ruksaan|21|Pakistan|ASIA|31-10-2015|2
+id0004|Manoj|44|Nepal|ASIA|01-10-2015|3
+id0005|Ching|34|China|ASIA|19-10-2015|4
+id0006|Chang|28|China|ASIA|31-10-2017|4
+id0007|Bob|28|Switzerland|Europe|31-10-2001|5
+id0008|Tisa|28|Switzerland|Europe|31-10-2001|5

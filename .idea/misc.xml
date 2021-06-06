@@ -6,6 +6,8 @@
         <option value="$PROJECT_DIR$/FixedWidthDataSourceAPI/pom.xml" />
         <option value="$PROJECT_DIR$/FileFormatExample/pom.xml" />
         <option value="$PROJECT_DIR$/WordCount/pom.xml" />
+        <option value="$PROJECT_DIR$/OlympicDataExample/pom.xml" />
+        <option value="$PROJECT_DIR$/DataPipeline/pom.xml" />
       </list>
     </option>
   </component>
